@@ -91,7 +91,8 @@ tasks.register("verifyBleedingEdgeConfiguration") {
 
 tasks.register("generateAllApiClients") {
     group = "genesis"
-    description = "Generate all OpenAPI client code (bleeding edge)"
+    description = "Generate all OpenAPI client code (auto-clean and regenerate)"
+    dependsOn(":app:cleanOpenApiGenerated")
     dependsOn(":app:generateAiApiClient")
     dependsOn(":app:generateCustomizationApiClient")
     dependsOn(":app:generateGenesisApiClient")
